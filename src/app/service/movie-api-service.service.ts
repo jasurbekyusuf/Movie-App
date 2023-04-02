@@ -11,13 +11,10 @@ export class MovieApiServiceService {
   baseurl = "https://api.themoviedb.org/3";
   apikey = "08cc33bd5ae3a747598ce2ad84376e66";
 
-
   //bannerapidata
-
   bannerApiData(): Observable<any> {
     return this.http.get(`${this.baseurl}/trending/all/week?api_key=${this.apikey}`);
   }
-
 
   // trendingmovieapidata
   trendingMovieApiData(): Observable<any> {
@@ -45,6 +42,7 @@ export class MovieApiServiceService {
   getMovieCast(data: any): Observable<any> {
     return this.http.get(`${this.baseurl}/movie/${data}/credits?api_key=${this.apikey}`)
   }
+
   // action
   fetchActionMovies(): Observable<any> {
     return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=28`);
@@ -71,7 +69,6 @@ export class MovieApiServiceService {
   }
 
   // science-fiction:878
-
   fetchScienceFictionMovies(): Observable<any> {
     return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=878`);
   }
@@ -80,5 +77,4 @@ export class MovieApiServiceService {
   fetchThrillerMovies(): Observable<any> {
     return this.http.get(`${this.baseurl}/discover/movie?api_key=${this.apikey}&with_genres=53`);
   }
-
 }
